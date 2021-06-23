@@ -3948,7 +3948,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7c5a5901e86e51b44882ef657da40aaf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e44bf72969947442ba4c46554eddcc0, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3975,13 +3975,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 88738205}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1afeff334a254c4580659336bee6e4e, type: 3}
+  m_Script: {fileID: 11500000, guid: e1c12dd0007319c4693bd13bc4ca6449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthBar: {fileID: 0}
   CurrentHealth: 0
-  MaxHealth: 100
-  Player: {fileID: 0}
 --- !u!1 &92987021
 GameObject:
   m_ObjectHideFlags: 0
@@ -10350,13 +10347,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -31285,6 +31282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aebfb4b86b2e54606894da54f755db2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 100
 --- !u!81 &959308589
 AudioListener:
   m_ObjectHideFlags: 0

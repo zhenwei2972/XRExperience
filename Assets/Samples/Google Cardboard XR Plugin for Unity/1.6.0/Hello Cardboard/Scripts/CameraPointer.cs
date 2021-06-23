@@ -26,6 +26,7 @@ public class CameraPointer : MonoBehaviour
 {
     private const float _maxDistance = 90;
     private GameObject _gazedAtObject = null;
+    public float Health = 100f;
 
     /// <summary>
     /// Update is called once per frame.
