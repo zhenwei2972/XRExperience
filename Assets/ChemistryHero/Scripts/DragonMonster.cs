@@ -18,6 +18,8 @@ public class DragonMonster : MonoBehaviour
     bool shootFireBall = false;
     public Transform playerTarget;
     public Transform fireBallStartPosition;
+    float delayInShooting = 0f;
+    bool activateShootingTrigger = false;
 
     void Start()
     {
@@ -46,13 +48,27 @@ public class DragonMonster : MonoBehaviour
 
         if (attack)
         {
-            animator.SetTrigger("Attack");
-            shootFireBall = true;
-            attack = false;
+            if (!activateShootingTrigger)
+            {
+                animator.SetTrigger("Attack");
+                activateShootingTrigger = true;
+            }
+            
+            activateShootingTrigger = true;
+            delayInShooting += Time.deltaTime;
+            if (delayInShooting >= 1f)
+            {
+                delayInShooting = 0f;
+                shootFireBall = true;
+                attack = false;
+                activateShootingTrigger = false;
+            }
+          
         }
 
         if (shootFireBall)
         {
+
             fireBall.SetActive(true);
             if (fireBall.transform.position != playerTarget.position)
             {
