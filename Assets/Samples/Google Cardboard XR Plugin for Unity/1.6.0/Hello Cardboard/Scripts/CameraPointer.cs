@@ -24,32 +24,41 @@ using UnityEngine;
 /// </summary>
 public class CameraPointer : MonoBehaviour
 {
-    private const float _maxDistance = 10;
+    private const float _maxDistance = 90;
     private GameObject _gazedAtObject = null;
 
     /// <summary>
     /// Update is called once per frame.
     /// </summary>
+    /// 
+
     public void Update()
     {
         // Casts ray towards camera's forward direction, to detect if a GameObject is being gazed
         // at.
         RaycastHit hit;
+        GameObject currentTestTube = null;
         if (Physics.Raycast(transform.position, transform.forward, out hit, _maxDistance))
         {
+            Debug.DrawRay(transform.position, transform.forward, Color.green);
             // GameObject detected in front of the camera.
             if (_gazedAtObject != hit.transform.gameObject)
             {
-                // New GameObject.
-                _gazedAtObject?.SendMessage("OnPointerExit");
                 _gazedAtObject = hit.transform.gameObject;
-                _gazedAtObject.SendMessage("OnPointerEnter");
+                if (hit.transform.gameObject.tag == "testtube")
+                {
+                    currentTestTube = _gazedAtObject;
+                    _gazedAtObject?.SendMessage("OnPointerEnter");
+                }
+            }
+            if(_gazedAtObject.tag == "rubbish")
+            {
+                Destroy(currentTestTube);
             }
         }
         else
         {
-            // No GameObject detected in front of the camera.
-            _gazedAtObject?.SendMessage("OnPointerExit");
+
             _gazedAtObject = null;
         }
 
