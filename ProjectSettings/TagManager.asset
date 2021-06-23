@@ -19,6 +19,7 @@ TagManager:
   - Potassium Nitrate
   - Lithium Sulfate
   - Lithium Nitrate
+  - originalPos
   layers:
   - Default
   - TransparentFX

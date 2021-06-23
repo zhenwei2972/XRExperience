@@ -19,7 +19,10 @@ public class MovingScript : MonoBehaviour
     public float rotateAmount = -165;
     // Rotation we should blend towards.
     private Quaternion _targetRotation = Quaternion.identity;
-    
+    public GameObject startPos;
+    public bool resetLerp = false;
+    public PourLiquid pourLiquid;
+
     // Call this when you want to turn the object smoothly.
     public void SetBlendedEulerAngles(Vector3 angles)
     {
@@ -51,13 +54,31 @@ public class MovingScript : MonoBehaviour
         { 
             Vector3 finalRotation = new Vector3(transform.position.x, transform.position.y, transform.position.z - rotateAmount);
             SetBlendedEulerAngles(finalRotation);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, _targetRotation, turningRate * Time.deltaTime);
             //Start the coroutine we define below named ExampleCoroutine.
-            StartCoroutine(DestroyTube());
-        
-    }
+            // StartCoroutine(DestroyTube());
+
+            if (Input.touchCount > 0)
+            {
+                Touch first = Input.GetTouch(0);
+                if (first.phase == TouchPhase.Stationary)
+                {
+                    Debug.Log("pressing");
+                    pourLiquid.StartPouring();
+                }
+            }
+
+        }
+        if(resetLerp)
+        {
+            Debug.Log("Reset the lerp");
+            transform.position = Vector3.Lerp(transform.position, startPos.transform.position, 2 * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, startPos.transform.rotation, 5 * Time.deltaTime);
+           // SetBlendedEulerAngles(finalRotation);
+        }
  
         // if want to dispose, look at rubbish bin. 
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, _targetRotation, turningRate * Time.deltaTime);
+       
     }
    
     IEnumerator DestroyTube()
@@ -82,6 +103,14 @@ public class MovingScript : MonoBehaviour
         selected = true;
         
     }
+    public void ResetLerp()
+    {
+        Debug.Log("send message reset success");
+        resetLerp = true;
+        selected = false;
+        exit = false;
+        clicked = false;
+    }    
     void LerpMovement(Vector3 start, Vector3 end)
     {
         // move to camera
