@@ -31,6 +31,7 @@ public class ChemicalReaction : MonoBehaviour
         if (selected.Count >= 2)
         {
             string result = chemical[outcomeArr[selected.Dequeue(), selected.Dequeue()]];
+            Debug.Log(result);
             //CallOtherFunction(result);
         }
     }
