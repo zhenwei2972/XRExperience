@@ -6,6 +6,7 @@ public class FireBall : MonoBehaviour
 {
     // Start is called before the first frame update
     public DragonMonster dragonMonster;
+    public AudioManagerCombat audioManager;
     void Start()
     {
         
@@ -22,6 +23,7 @@ public class FireBall : MonoBehaviour
         if (hit.gameObject.CompareTag("Player"))
         {
             PlayerShield playerShield = hit.gameObject.GetComponent<PlayerShield>();
+            audioManager.PlayExplodingSound();
             playerShield.ShowDustEffect();
             dragonMonster.StopFireBall();
 

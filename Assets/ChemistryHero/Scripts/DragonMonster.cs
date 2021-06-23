@@ -20,7 +20,7 @@ public class DragonMonster : MonoBehaviour
     public Transform fireBallStartPosition;
     float delayInShooting = 0f;
     bool activateShootingTrigger = false;
-
+    public AudioManagerCombat audioManager;
     void Start()
     {
         StartCoroutine("PrepareToLift");   
@@ -68,7 +68,7 @@ public class DragonMonster : MonoBehaviour
 
         if (shootFireBall)
         {
-
+            audioManager.PlayFireBallShootSound(); 
             fireBall.SetActive(true);
             if (fireBall.transform.position != playerTarget.position)
             {
