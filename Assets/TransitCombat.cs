@@ -19,7 +19,7 @@ public class TransitCombat : MonoBehaviour
         // Casts ray towards camera's forward direction, to detect if a GameObject is being gazed
         // at.
         RaycastHit hit;
-        GameObject currentTestTube = null;
+        //GameObject currentTestTube = null;
         if (Physics.Raycast(transform.position, transform.forward, out hit, _maxDistance))
         {
             Debug.DrawRay(transform.position, transform.forward, Color.green);
@@ -27,15 +27,15 @@ public class TransitCombat : MonoBehaviour
             if (_gazedAtObject != hit.transform.gameObject)
             {
                 _gazedAtObject = hit.transform.gameObject;
-                if (hit.transform.gameObject.tag == "testtube")
+                if (hit.transform.gameObject.CompareTag("PortalCombat"))
                 {
-                    currentTestTube = _gazedAtObject;
+                    //currentTestTube = _gazedAtObject;
                     _gazedAtObject?.SendMessage("OnPointerEnter");
                 }
             }
             if (_gazedAtObject.tag == "rubbish")
             {
-                Destroy(currentTestTube);
+                //Destroy(currentTestTube);
             }
         }
         else
