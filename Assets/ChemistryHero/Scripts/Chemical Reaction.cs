@@ -24,7 +24,7 @@ public class ChemicalReaction : MonoBehaviour
         
     }
 
-    void AddChemical(string name)
+    public void AddChemical(string name)
     {
         int index = chemical.IndexOf(name);
         selected.Enqueue(index);
