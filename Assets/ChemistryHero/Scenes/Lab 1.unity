@@ -3979,7 +3979,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7c5a5901e86e51b44882ef657da40aaf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e44bf72969947442ba4c46554eddcc0, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4006,9 +4006,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 88738205}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1afeff334a254c4580659336bee6e4e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c9d247fa01cfe2408426091e7a9bee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentHealth: 0
 --- !u!1 &92987021
 GameObject:
   m_ObjectHideFlags: 0
@@ -23481,8 +23482,8 @@ MonoBehaviour:
   cameraPosition: {fileID: 76716473}
   turningRate: 110
   exit: 0
-  chemicalReactionhandler: {fileID: 2069278438}
-  rotateAmount: 330
+  chemicalReactionhandler: {fileID: 0}
+  rotateAmount: -165
 --- !u!65 &694119983
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24884,8 +24885,8 @@ MonoBehaviour:
   cameraPosition: {fileID: 379269707}
   turningRate: 110
   exit: 0
-  chemicalReactionhandler: {fileID: 2069278438}
-  rotateAmount: 165
+  chemicalReactionhandler: {fileID: 0}
+  rotateAmount: -165
 --- !u!1 &747214485
 GameObject:
   m_ObjectHideFlags: 0
@@ -31547,6 +31548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aebfb4b86b2e54606894da54f755db2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 0
 --- !u!81 &959308589
 AudioListener:
   m_ObjectHideFlags: 0
