@@ -14,9 +14,12 @@ public class MovingScript : MonoBehaviour
     public GameObject cameraPosition;
     Transform tempTrans;
     public float turningRate = 110f;
-    bool exit = false;
+    public bool exit = false;
+    public GameObject chemicalReactionhandler;
+    public float rotateAmount = -165;
     // Rotation we should blend towards.
     private Quaternion _targetRotation = Quaternion.identity;
+    
     // Call this when you want to turn the object smoothly.
     public void SetBlendedEulerAngles(Vector3 angles)
     {
@@ -46,7 +49,7 @@ public class MovingScript : MonoBehaviour
         }
         if (exit && clicked)
         { 
-            Vector3 finalRotation = new Vector3(transform.position.x, transform.position.y, transform.position.z - 90);
+            Vector3 finalRotation = new Vector3(transform.position.x, transform.position.y, transform.position.z - rotateAmount);
             SetBlendedEulerAngles(finalRotation);
             //Start the coroutine we define below named ExampleCoroutine.
             StartCoroutine(DestroyTube());
@@ -60,7 +63,7 @@ public class MovingScript : MonoBehaviour
     IEnumerator DestroyTube()
     {
         // call zul's code to give the name..
-        GetTag();
+        chemicalReactionhandler.GetComponent<ChemicalReaction>().AddChemical(GetTag());
         //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(9);
         // destroy gameobject.

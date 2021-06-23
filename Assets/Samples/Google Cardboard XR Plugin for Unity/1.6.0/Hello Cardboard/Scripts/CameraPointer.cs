@@ -24,7 +24,7 @@ using UnityEngine;
 /// </summary>
 public class CameraPointer : MonoBehaviour
 {
-    private const float _maxDistance = 90;
+    private const float _maxDistance = 200;
     private GameObject _gazedAtObject = null;
 
     /// <summary>
@@ -45,11 +45,9 @@ public class CameraPointer : MonoBehaviour
             if (_gazedAtObject != hit.transform.gameObject)
             {
                 _gazedAtObject = hit.transform.gameObject;
-                if (hit.transform.gameObject.tag == "testtube")
-                {
-                    currentTestTube = _gazedAtObject;
+
                     _gazedAtObject?.SendMessage("OnPointerEnter");
-                }
+
             }
             if(_gazedAtObject.tag == "rubbish")
             {

@@ -6,6 +6,19 @@ TagManager:
   tags:
   - StartGame
   - Exit
+  - Fire
+  - testtube
+  - rubbish
+  - Potassium
+  - Lithium
+  - Sulfuric acid
+  - Nitric acid
+  - Potassium Lithium
+  - Sulfuric Nitric acid
+  - Potassium Sulfate
+  - Potassium Nitrate
+  - Lithium Sulfate
+  - Lithium Nitrate
   layers:
   - Default
   - TransparentFX
