@@ -20,6 +20,7 @@ TagManager:
   - Lithium Sulfate
   - Lithium Nitrate
   - originalPos
+  - PortalCombat
   layers:
   - Default
   - TransparentFX

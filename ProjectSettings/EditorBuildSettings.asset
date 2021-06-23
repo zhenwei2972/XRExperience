@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/ChemistryHero/Scenes/Lab.unity
     guid: 6b2cb9ebe2b6d7a4c92b736308df4095
+  - enabled: 1
+    path: Assets/ChemistryHero/Scenes/Start.unity
+    guid: 09e4667de67ef6946bd8fb2fd340710f
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
