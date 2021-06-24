@@ -1026,6 +1026,10 @@ MonoBehaviour:
   startRadial: 0
   transition: {fileID: 0}
   transitionTime: 1
+  mainMenu: 1
+  tutorialLab1Page: 0
+  labTut: {fileID: 0}
+  comfirmationUI: {fileID: 0}
 --- !u!81 &959308589
 AudioListener:
   m_ObjectHideFlags: 0
