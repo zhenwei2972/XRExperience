@@ -22,7 +22,10 @@ public class MovingScript : MonoBehaviour
     public GameObject startPos;
     public bool resetLerp = false;
     public PourLiquid pourLiquid;
+    bool activateTut2 = false;
 
+    public LabTutorial labTut;
+    public bool HCL = false;
     // Call this when you want to turn the object smoothly.
     public void SetBlendedEulerAngles(Vector3 angles)
     {
@@ -53,7 +56,7 @@ public class MovingScript : MonoBehaviour
             Vector3 finalRotation = new Vector3(transform.position.x, transform.position.y, transform.position.z - rotateAmount);
             SetBlendedEulerAngles(finalRotation);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, _targetRotation, turningRate * Time.deltaTime);
-
+          
             if (Input.touchCount > 0)
             {
                 Touch first = Input.GetTouch(0);
@@ -62,6 +65,11 @@ public class MovingScript : MonoBehaviour
                 {
                     Debug.Log("pressing");
                     pourLiquid.StartPouring();
+                    if (!activateTut2 && HCL)
+                    {
+                        activateTut2 = true;
+                        labTut.IncrementNext();
+                    }
                 }
             }
 

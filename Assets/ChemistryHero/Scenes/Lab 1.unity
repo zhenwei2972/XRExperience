@@ -12700,6 +12700,140 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361998538}
   m_Mesh: {fileID: 4300000, guid: dd0eddeb229771a4a9f0ceb2eaac5421, type: 2}
+--- !u!1001 &373468962
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4493873131558625010, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625010, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625010, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625010, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625010, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625010, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625010, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625010, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1155.826
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625010, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 513.5778
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625010, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625010, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625010, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 75.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625010, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625010, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625010, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625010, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625010, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.773
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625010, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625010, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625010, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625010, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625014, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: isAuto.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625014, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: tutText.Array.data[1]
+      value: This is the test tube! You can mixed chemical in it
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625014, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: tutText.Array.data[2]
+      value: Now look at this hydrochloric acid on the left to select it!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493873131558625015, guid: 9638af561d464874b985a6d927321122,
+        type: 3}
+      propertyPath: m_Name
+      value: TutorialUI
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9638af561d464874b985a6d927321122, type: 3}
 --- !u!1 &377182229
 GameObject:
   m_ObjectHideFlags: 0
@@ -23688,6 +23822,8 @@ MonoBehaviour:
   startPos: {fileID: 675058383}
   resetLerp: 0
   pourLiquid: {fileID: 1906734838}
+  labTut: {fileID: 0}
+  HCL: 0
 --- !u!65 &694119983
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30309,14 +30445,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907292807}
-  m_LocalRotation: {x: 0.0032616719, y: -0, z: -0, w: 0.9999947}
+  m_LocalRotation: {x: -0.17116423, y: -0, z: -0, w: 0.9852425}
   m_LocalPosition: {x: 1.476, y: 1.471, z: 33.879}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 959308593}
   m_Father: {fileID: 1841110504}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0.374, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -19.711, y: 0, z: 0}
 --- !u!1 &907921393
 GameObject:
   m_ObjectHideFlags: 0
@@ -31752,6 +31888,7 @@ MonoBehaviour:
   transition: {fileID: 0}
   transitionTime: 1
   mainMenu: 0
+  labTut: {fileID: 2047621866}
 --- !u!81 &959308589
 AudioListener:
   m_ObjectHideFlags: 0
@@ -43607,6 +43744,8 @@ MonoBehaviour:
   startPos: {fileID: 1683887739}
   resetLerp: 0
   pourLiquid: {fileID: 1906734838}
+  labTut: {fileID: 0}
+  HCL: 0
 --- !u!65 &1328758718
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -66404,6 +66543,18 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &2047621866 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4493873131558625014, guid: 9638af561d464874b985a6d927321122,
+    type: 3}
+  m_PrefabInstance: {fileID: 373468962}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438b69fd0ce6d5f4e8cb22a4bd56783e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2058679948
 GameObject:
   m_ObjectHideFlags: 0
@@ -68928,6 +69079,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hydrochloric Acid
       objectReference: {fileID: 0}
+    - target: {fileID: 2953784872216468590, guid: 9ddad2772b521134fa64c0913748e1af,
+        type: 3}
+      propertyPath: HCL
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953784872216468590, guid: 9ddad2772b521134fa64c0913748e1af,
+        type: 3}
+      propertyPath: labTut
+      value: 
+      objectReference: {fileID: 2047621866}
     - target: {fileID: 2953784873569858259, guid: 9ddad2772b521134fa64c0913748e1af,
         type: 3}
       propertyPath: bubble

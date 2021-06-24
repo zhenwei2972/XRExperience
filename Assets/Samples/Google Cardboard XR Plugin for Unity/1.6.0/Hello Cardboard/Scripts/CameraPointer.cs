@@ -45,8 +45,10 @@ public class CameraPointer : MonoBehaviour
     private bool exit = false;
     public Animator transition;
     public float transitionTime = 1f;
-    public bool mainMenu;
-
+    public bool mainMenu = false;
+    bool activateTut1 = false;
+    public LabTutorial labTut;
+    bool activateTut3 = false;
     /// <summary>
     /// Update is called once per frame.
     /// </summary>
@@ -69,12 +71,7 @@ public class CameraPointer : MonoBehaviour
             if (_gazedAtObject != hit.transform.gameObject)
             {
                 _gazedAtObject = hit.transform.gameObject;
-               if(_gazedAtObject.CompareTag("testtube"))
-                {
-      
-                    lastTestTube = _gazedAtObject.GetComponent<MovingScript>();
-                    print("zul is:"  + lastTestTube);
-                }
+              
                 _gazedAtObject?.SendMessage("OnPointerEnter");
 
                 if (hit.transform.gameObject.CompareTag("StartGame"))
@@ -99,6 +96,25 @@ public class CameraPointer : MonoBehaviour
             //control radial 
             if (!mainMenu)
             {
+                if (_gazedAtObject.CompareTag("testtube"))
+                {
+                    if (!activateTut1)
+                    {
+                        activateTut1 = true;
+                        labTut.IncrementNext();
+                    }
+                    else if(_gazedAtObject.name=="Sodium")
+                    {
+                        if (!activateTut3)
+                        {
+                            activateTut3= true;
+                            labTut.IncrementNext();
+                        }
+                    }
+
+                    lastTestTube = _gazedAtObject.GetComponent<MovingScript>();
+                    print("zul is:" + lastTestTube);
+                }
 
 
                 if (startRadial)
