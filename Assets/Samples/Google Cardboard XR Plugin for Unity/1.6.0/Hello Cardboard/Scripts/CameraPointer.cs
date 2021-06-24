@@ -19,7 +19,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Sends messages to gazed GameObject.
@@ -38,10 +37,6 @@ public class CameraPointer : MonoBehaviour
     public bool startRadial = false;
     bool isCounting = false;
     MovingScript lastTestTube = null;
-    private bool start = false;
-    private bool exit = false;
-    public Animator transition;
-    public float transitionTime = 1f;
     /// <summary>
     /// Update is called once per frame.
     /// </summary>
@@ -58,7 +53,6 @@ public class CameraPointer : MonoBehaviour
         {
             Debug.DrawRay(transform.position, transform.forward, Color.green);
 
-            Debug.DrawRay(transform.position, transform.forward, Color.green, _maxDistance);
             // GameObject detected in front of the camera.
             if (_gazedAtObject != hit.transform.gameObject)
             {
@@ -70,21 +64,6 @@ public class CameraPointer : MonoBehaviour
                     print("zul is:"  + lastTestTube);
                 }
                 _gazedAtObject?.SendMessage("OnPointerEnter");
-                //              _gazedAtObject?.SendMessage("OnPointerEnter");
-
-                if (hit.transform.gameObject.CompareTag("StartGame"))
-                {
-                    Debug.Log("Start");
-                    start = true;
-                    exit = false;
-
-                }
-                else if (hit.transform.gameObject.CompareTag("Exit"))
-                {
-                    Debug.Log("Exit");
-                    start = false;
-                    exit = true;
-                }
 
             }
             if(_gazedAtObject.tag == "rubbish")
@@ -143,17 +122,6 @@ public class CameraPointer : MonoBehaviour
         {
             
             _gazedAtObject?.SendMessage("OnPointerClick");
-            //_gazedAtObject?.SendMessage("OnPointerClick");
-            if (start)
-            {
-                //transition.SetTrigger("Start");
-                //yield return new WaitForSeconds(transitionTime);
-                SceneManager.LoadScene("Lab 1");
-            }
-            else if (exit)
-            {
-                Application.Quit();
-            }
         }
 
       /*  if (Input.GetMouseButton(0))
