@@ -756,7 +756,7 @@ Transform:
   m_GameObject: {fileID: 521261840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: -0, z: 0.149}
-  m_LocalScale: {x: 0.0027877, y: 0.0027877, z: 0.0027877}
+  m_LocalScale: {x: 0.0022632498, y: 0.0022632498, z: 0.0022632498}
   m_Children: []
   m_Father: {fileID: 959308593}
   m_RootOrder: 0
@@ -779,7 +779,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1355b07b14e1e7445858f6b340ce359d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -972,7 +972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &567048180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1530,6 +1530,8 @@ MonoBehaviour:
   transition: {fileID: 0}
   transitionTime: 1
   mainMenu: 0
+  tutorialLab1Page: 0
+  labTut: {fileID: 0}
 --- !u!81 &959308589
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2382,12 +2384,17 @@ PrefabInstance:
     - target: {fileID: 4468219653068766880, guid: 43f909c31feb8b94592b42164ede0d98,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4468219653068766881, guid: 43f909c31feb8b94592b42164ede0d98,
         type: 3}
       propertyPath: tutText.Array.data[0]
       value: Craft sodium chloride.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468219653068766881, guid: 43f909c31feb8b94592b42164ede0d98,
+        type: 3}
+      propertyPath: tutText.Array.data[1]
+      value: Now look at the dragon and tap the button to throw the testtube
       objectReference: {fileID: 0}
     - target: {fileID: 4468219653068766885, guid: 43f909c31feb8b94592b42164ede0d98,
         type: 3}
@@ -2493,6 +2500,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468219653837419745, guid: 43f909c31feb8b94592b42164ede0d98,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468219653837419745, guid: 43f909c31feb8b94592b42164ede0d98,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468219653837419745, guid: 43f909c31feb8b94592b42164ede0d98,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -71
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43f909c31feb8b94592b42164ede0d98, type: 3}

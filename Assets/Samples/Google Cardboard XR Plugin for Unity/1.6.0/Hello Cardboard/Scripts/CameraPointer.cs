@@ -197,15 +197,7 @@ public class CameraPointer : MonoBehaviour
             pourLiquid.StartPouring();
         }
       */
-        if (Input.touchCount > 0)
-        {
-            Touch first = Input.GetTouch(0);
-            if (first.phase == TouchPhase.Stationary)
-            {
-                Debug.Log("pressing");
-                pourLiquid.StartPouring();
-            }
-        }
+   
 
 
         
