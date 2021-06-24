@@ -9,6 +9,8 @@ public class ChemicalReaction : MonoBehaviour
     public bool isCombatScene = false;
     public LabTutorial labTutorial;
     bool hasActivateTut1 = false;
+    public Throwtestube throwTube;
+
     List<string> chemical = new List<string>() {
         "Sodium", "Lithium", "Sulfuric Acid", "Hydrochloric Acid", //0 1 2 3
         "Sodium Lithium", "Sulfuric Hydrochloric Acid", //4 5
@@ -42,6 +44,7 @@ public class ChemicalReaction : MonoBehaviour
             {
                 hasActivateTut1 = true;
                 labTutorial.IncrementNext();
+                throwTube.CanThrow();
             }
         }
     }

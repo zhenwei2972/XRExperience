@@ -21,6 +21,8 @@ public class DragonMonster : MonoBehaviour
     float delayInShooting = 0f;
     bool activateShootingTrigger = false;
     public AudioManagerCombat audioManager;
+    public Transform fleePos;
+    bool flee =false;
     void Start()
     {
         StartCoroutine("PrepareToLift");   
@@ -66,7 +68,7 @@ public class DragonMonster : MonoBehaviour
           
         }
 
-        if (shootFireBall)
+        if (shootFireBall && !flee)
         {
             audioManager.PlayFireBallShootSound(); 
             fireBall.SetActive(true);
@@ -80,6 +82,15 @@ public class DragonMonster : MonoBehaviour
                 fireBall.transform.position = fireBallStartPosition.position;
                 fireBall.SetActive(false);
             } */
+        }
+
+
+        if (flee)
+        {
+            if (transform.position != fleePos.position)
+            {
+                transform.position = Vector3.Lerp(transform.position, fleePos.position, 5 * Time.deltaTime);
+            }
         }
     }
 
@@ -127,6 +138,15 @@ public class DragonMonster : MonoBehaviour
         shootFireBall = false;
         fireBall.transform.position = fireBallStartPosition.position;
         fireBall.SetActive(false);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("maintesttube"))
+        {
+            flee = true;
+            Destroy(other.gameObject);
+        }
     }
 
 }

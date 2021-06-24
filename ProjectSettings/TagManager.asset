@@ -27,6 +27,7 @@ TagManager:
   - retry
   - quit
   - monster
+  - maintesttube
   layers:
   - Default
   - TransparentFX
