@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class ChemicalReaction : MonoBehaviour
 {
+    public GameObject bubble;
     static Queue<int> selected = new Queue<int>();
     List<string> chemical = new List<string>() {
-        "Potassium", "Lithium", "Sulfuric acid", "Nitric acid", //0 1 2 3
-        "Potassium Lithium", "Sulfuric Nitric acid", //4 5
-        "Potassium Sulfate", "Potassium Nitrate",    //6 7
-        "Lithium Sulfate", "Lithium Nitrate",        //8 9
+        "Sodium", "Lithium", "Sulfuric Acid", "Hydrochloric Acid", //0 1 2 3
+        "Sodium Lithium", "Sulfuric Hydrochloric Acid", //4 5
+        "Sodium Sulfate", "Sodium Chloride",        //6 7
+        "Lithium Sulfate", "Lithium Chloride",      //8 9
     };
     public int[,] outcomeArr = {
         { 0, 4, 6, 7   }, //00 01 02 03
@@ -32,6 +33,7 @@ public class ChemicalReaction : MonoBehaviour
         {
             string result = chemical[outcomeArr[selected.Dequeue(), selected.Dequeue()]];
             Debug.Log(result);
+            bubble.SetActive(true);
             //CallOtherFunction(result);
         }
     }
