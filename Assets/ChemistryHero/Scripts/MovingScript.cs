@@ -45,8 +45,6 @@ public class MovingScript : MonoBehaviour
         if (selected == true)
         {
             transform.position = Vector3.Lerp(transform.position, cameraPosition.transform.position, 2 * Time.deltaTime);
-            // LerpMovement(pointA, pointB);
-            //StartCoroutine(MoveBack(pointB,pointA));
             exit = true;
 
         }
@@ -55,12 +53,11 @@ public class MovingScript : MonoBehaviour
             Vector3 finalRotation = new Vector3(transform.position.x, transform.position.y, transform.position.z - rotateAmount);
             SetBlendedEulerAngles(finalRotation);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, _targetRotation, turningRate * Time.deltaTime);
-            //Start the coroutine we define below named ExampleCoroutine.
-            // StartCoroutine(DestroyTube());
 
             if (Input.touchCount > 0)
             {
                 Touch first = Input.GetTouch(0);
+                chemicalReactionhandler.GetComponent<ChemicalReaction>().AddChemical(GetName());
                 if (first.phase == TouchPhase.Stationary)
                 {
                     Debug.Log("pressing");
@@ -84,7 +81,7 @@ public class MovingScript : MonoBehaviour
     IEnumerator DestroyTube()
     {
         // call zul's code to give the name..
-        chemicalReactionhandler.GetComponent<ChemicalReaction>().AddChemical(GetTag());
+        
         //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(9);
         // destroy gameobject.
@@ -92,9 +89,9 @@ public class MovingScript : MonoBehaviour
 
 
     }
-    string GetTag()
+    string GetName()
     {
-        return gameObject.tag;
+        return gameObject.name;
     }
     void OnPointerEnter()
     {
