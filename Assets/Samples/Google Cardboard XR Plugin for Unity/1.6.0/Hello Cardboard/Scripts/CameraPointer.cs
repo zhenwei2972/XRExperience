@@ -50,7 +50,11 @@ public class CameraPointer : MonoBehaviour
     bool activateTut1 = false;
     public LabTutorial labTut;
     bool activateTut3 = false;
-    
+
+    private bool confirm = false;
+    private bool yesBool = false;
+    private bool noBool = false;
+    public GameObject comfirmationUI;
     /// <summary>
     /// Update is called once per frame.
     /// </summary>
@@ -96,8 +100,14 @@ public class CameraPointer : MonoBehaviour
                // Destroy(lastTestTube);
             }
             //control radial 
-            if (!mainMenu)
+            if (!mainMenu)  //NOT MAIN MENU
             {
+                if (hit.transform.gameObject.CompareTag("PortalCombat"))
+                {
+                    Debug.Log("combat");
+                    confirm = true;
+                }
+
                 if (_gazedAtObject.CompareTag("testtube"))
                 {
                     if (tutorialLab1Page)
@@ -165,6 +175,8 @@ public class CameraPointer : MonoBehaviour
                     print("not looking");
                 }
 
+
+
             }
 
         }
@@ -172,6 +184,28 @@ public class CameraPointer : MonoBehaviour
         {
 
             _gazedAtObject = null;
+        }
+
+
+        if (confirm)
+        {
+            Debug.Log("combat pass");
+            comfirmationUI.SetActive(true);
+
+
+            if (hit.transform.gameObject.CompareTag("yes"))
+            {
+
+                yesBool = true;
+                noBool = false;
+            }
+            if (hit.transform.gameObject.CompareTag("no"))
+            {
+
+                noBool = true;
+                yesBool = false;
+
+            }
         }
 
         // Checks for screen touches.
@@ -184,28 +218,42 @@ public class CameraPointer : MonoBehaviour
                 print("load");
                 SceneManager.LoadScene("Lab 1");
             }
+
             else if (exit)
             {
                 Application.Quit();
             }
             _gazedAtObject?.SendMessage("OnPointerClick");
-        }
-
-      /*  if (Input.GetMouseButton(0))
-        {
-            Debug.Log("pressing");
-            pourLiquid.StartPouring();
-        }
-      */
-   
 
 
-        
+           //_gazedAtObject?.SendMessage("OnPointerClick");
+              if (yesBool)
+                {
+                    SceneManager.LoadScene("Combat");
+                }
+                if (noBool)
+                {
+                    comfirmationUI.SetActive(false);
+                    noBool = false;
+                }
+
+            }
+
+            /*  if (Input.GetMouseButton(0))
+              {
+                  Debug.Log("pressing");
+                  pourLiquid.StartPouring();
+              }
+            */
+
+
+
+
             //transition.SetTrigger("Start");
             //yield return new WaitForSeconds(transitionTime);
-         
-          
-        
 
-    }
+
+
+
+        }
 }

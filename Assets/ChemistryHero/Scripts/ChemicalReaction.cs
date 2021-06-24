@@ -6,6 +6,9 @@ public class ChemicalReaction : MonoBehaviour
 {
     public GameObject bubble;
     static Queue<int> selected = new Queue<int>();
+    public bool isCombatScene = false;
+    public LabTutorial labTutorial;
+    bool hasActivateTut1 = false;
     List<string> chemical = new List<string>() {
         "Sodium", "Lithium", "Sulfuric Acid", "Hydrochloric Acid", //0 1 2 3
         "Sodium Lithium", "Sulfuric Hydrochloric Acid", //4 5
@@ -35,6 +38,11 @@ public class ChemicalReaction : MonoBehaviour
             Debug.Log(result);
             bubble.SetActive(true);
             //CallOtherFunction(result);
+            if (isCombatScene && !hasActivateTut1)
+            {
+                hasActivateTut1 = true;
+                labTutorial.IncrementNext();
+            }
         }
     }
 
