@@ -714,6 +714,7 @@ MonoBehaviour:
   playerTarget: {fileID: 907292808}
   fireBallStartPosition: {fileID: 479780344}
   audioManager: {fileID: 2097622151}
+  fleePos: {fileID: 1232518202}
 --- !u!4 &506500077
 Transform:
   m_ObjectHideFlags: 0
@@ -1305,7 +1306,7 @@ PrefabInstance:
         type: 3}
       propertyPath: throwTube
       value: 
-      objectReference: {fileID: 1352287355}
+      objectReference: {fileID: 1352287358}
     - target: {fileID: 2953784873569858259, guid: 9ddad2772b521134fa64c0913748e1af,
         type: 3}
       propertyPath: labTutorial
@@ -2038,6 +2039,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46f5c004c20094c49889487b4f6d72c6, type: 3}
+--- !u!1 &1232518201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1232518202}
+  m_Layer: 0
+  m_Name: FleePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1232518202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232518201}
+  m_LocalRotation: {x: -0.10001405, y: -0.8958032, z: 0.28001896, w: -0.330338}
+  m_LocalPosition: {x: -10.17, y: 41.8, z: 19.65}
+  m_LocalScale: {x: 1.6490074, y: 1.6490074, z: 1.6490074}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 34.594, y: -220.61, z: -0.40500003}
 --- !u!1 &1240719430
 GameObject:
   m_ObjectHideFlags: 0
@@ -2074,19 +2105,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 890614739}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1352287355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1352287354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f6e056178756464b95596f1a8a4b876, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  endPos: {fileID: 506500077}
 --- !u!54 &1352287356
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2116,6 +2134,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0418333, y: 0.26242322, z: 0.04183319}
   m_Center: {x: 0, y: 0, z: 0.00000049639493}
+--- !u!114 &1352287358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352287354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f6e056178756464b95596f1a8a4b876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endPos: {fileID: 506500077}
 --- !u!1001 &1404519314
 PrefabInstance:
   m_ObjectHideFlags: 0

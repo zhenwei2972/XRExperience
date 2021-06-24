@@ -59,6 +59,7 @@ public class CameraPointer : MonoBehaviour
     private bool reBool = false;
     private bool quitBool = false;
 
+    bool activateTut4 = false;
    
     /// <summary>
     /// Update is called once per frame.
@@ -123,7 +124,8 @@ public class CameraPointer : MonoBehaviour
                                 activateTut1 = true;
                                 labTut.IncrementNext();
                             }
-                            else if (_gazedAtObject.name == "Sodium")
+                            //doesnt seem to work.
+                            if (_gazedAtObject.name == "Sodium")
                             {
                                 if (!activateTut3)
                                 {
@@ -153,7 +155,14 @@ public class CameraPointer : MonoBehaviour
                         //  lastTestTube?.SendMessage("ResetLerp");
                         // print(lastTestTube);
                         lastTestTube.ResetLerp();
-
+                        if(tutorialLab1Page)
+                        {
+                            if(!activateTut4)
+                            {
+                                activateTut4 = true;
+                                labTut.IncrementNext();
+                            }
+                        }
                         Debug.Log("successfully send Lerp");
                     }
                     LoadingBar.fillAmount = currentValue / 100;
@@ -191,12 +200,7 @@ public class CameraPointer : MonoBehaviour
         }
 
 
-        if (confirm)
-        {
-            Debug.Log("combat pass");
-            comfirmationUI.SetActive(true);
-
-
+        
             if (hit.transform.gameObject.CompareTag("yes"))
             {
 
@@ -223,7 +227,7 @@ public class CameraPointer : MonoBehaviour
                 reBool = false;
 
             }
-        }
+        
 
         // Checks for screen touches.
         if (Google.XR.Cardboard.Api.IsTriggerPressed)
@@ -254,7 +258,12 @@ public class CameraPointer : MonoBehaviour
                     noBool = false;
                 }
 
-            
+            if (confirm)
+            {
+                Debug.Log("combat pass");
+                comfirmationUI.SetActive(true);
+
+            }
 
             if (reBool)
             {

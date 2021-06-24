@@ -26,6 +26,8 @@ public class MovingScript : MonoBehaviour
 
     public LabTutorial labTut;
     public bool HCL = false;
+    public bool sodium = false;
+    bool newActivate = false;
     // Call this when you want to turn the object smoothly.
     public void SetBlendedEulerAngles(Vector3 angles)
     {
@@ -68,6 +70,11 @@ public class MovingScript : MonoBehaviour
                     if (!activateTut2 && HCL)
                     {
                         activateTut2 = true;
+                        labTut.IncrementNext();
+                    }
+                    if (!newActivate && sodium)
+                    {
+                        newActivate = true;
                         labTut.IncrementNext();
                     }
                 }

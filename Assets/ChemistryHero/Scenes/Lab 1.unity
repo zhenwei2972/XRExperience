@@ -21009,6 +21009,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 609507336}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &609507338 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 767977816930071085, guid: 3bf2f02e20b61154ab269b1472c8a3d3,
+    type: 3}
+  m_PrefabInstance: {fileID: 609507336}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &613536072
 GameObject:
   m_ObjectHideFlags: 0
@@ -23822,6 +23828,7 @@ MonoBehaviour:
   pourLiquid: {fileID: 1906734838}
   labTut: {fileID: 0}
   HCL: 0
+  sodium: 0
 --- !u!65 &694119983
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31888,7 +31895,7 @@ MonoBehaviour:
   mainMenu: 0
   tutorialLab1Page: 1
   labTut: {fileID: 2047621866}
-  comfirmationUI: {fileID: 0}
+  comfirmationUI: {fileID: 609507338}
 --- !u!81 &959308589
 AudioListener:
   m_ObjectHideFlags: 0
@@ -43740,6 +43747,7 @@ MonoBehaviour:
   pourLiquid: {fileID: 1906734838}
   labTut: {fileID: 0}
   HCL: 0
+  sodium: 0
 --- !u!65 &1328758718
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -68971,6 +68979,11 @@ PrefabInstance:
       propertyPath: labTut
       value: 
       objectReference: {fileID: 2047621866}
+    - target: {fileID: 2953784873146107036, guid: 9ddad2772b521134fa64c0913748e1af,
+        type: 3}
+      propertyPath: sodium
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3863296659014311968, guid: 9ddad2772b521134fa64c0913748e1af,
         type: 3}
       propertyPath: m_RootOrder
