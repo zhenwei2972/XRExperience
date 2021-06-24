@@ -45,6 +45,7 @@ public class CameraPointer : MonoBehaviour
     private bool exit = false;
     public Animator transition;
     public float transitionTime = 1f;
+    public bool mainMenu;
 
     /// <summary>
     /// Update is called once per frame.
@@ -54,13 +55,15 @@ public class CameraPointer : MonoBehaviour
 
     public void Update()
     {
+        
+
         // Casts ray towards camera's forward direction, to detect if a GameObject is being gazed
         // at.
         RaycastHit hit;
      
         if (Physics.Raycast(transform.position, transform.forward, out hit, _maxDistance))
         {
-            Debug.DrawRay(transform.position, transform.forward, Color.green);
+            Debug.DrawRay(transform.position, transform.forward, Color.green, _maxDistance);
 
             // GameObject detected in front of the camera.
             if (_gazedAtObject != hit.transform.gameObject)
@@ -94,46 +97,51 @@ public class CameraPointer : MonoBehaviour
                // Destroy(lastTestTube);
             }
             //control radial 
-
-            if (startRadial)
+            if (!mainMenu)
             {
-               
-                if (currentValue < 100)
-                {
-                   
-                    currentValue += speed * Time.deltaTime;
 
-                }
-                if ( LoadingBar.fillAmount==1)
-                {
-                    //  lastTestTube?.SendMessage("ResetLerp");
-                   // print(lastTestTube);
-                    lastTestTube.ResetLerp();
 
-                    Debug.Log("successfully send Lerp");
-                }
-                LoadingBar.fillAmount = currentValue / 100;
-            }
-
-            if(_gazedAtObject.CompareTag("originalPos"))
-            {
-              
-                if (!isCounting)
+                if (startRadial)
                 {
-                    LoadingBarObject.transform.position = _gazedAtObject.transform.position;
-                    currentValue = 0;
-                    isCounting = true;
-                    startRadial = true;
+
+                    if (currentValue < 100)
+                    {
+
+                        currentValue += speed * Time.deltaTime;
+
+                    }
+                    if (LoadingBar.fillAmount == 1)
+                    {
+                        //  lastTestTube?.SendMessage("ResetLerp");
+                        // print(lastTestTube);
+                        lastTestTube.ResetLerp();
+
+                        Debug.Log("successfully send Lerp");
+                    }
+                    LoadingBar.fillAmount = currentValue / 100;
                 }
 
-                print("looking");
-            }
-            else
-            {
-                isCounting = false;
-                LoadingBar.fillAmount = 0;
-                startRadial = false;
-                print("not looking");
+                if (_gazedAtObject.CompareTag("originalPos"))
+                {
+
+                    if (!isCounting)
+                    {
+                        LoadingBarObject.transform.position = _gazedAtObject.transform.position;
+                        currentValue = 0;
+                        isCounting = true;
+                        startRadial = true;
+                    }
+
+                    print("looking");
+                }
+                else
+                {
+                    isCounting = false;
+                    LoadingBar.fillAmount = 0;
+                    startRadial = false;
+                    print("not looking");
+                }
+
             }
 
         }
@@ -150,6 +158,7 @@ public class CameraPointer : MonoBehaviour
             {
                 //transition.SetTrigger("Start");
                 //yield return new WaitForSeconds(transitionTime);
+                print("load");
                 SceneManager.LoadScene("Lab 1");
             }
             else if (exit)
@@ -174,6 +183,14 @@ public class CameraPointer : MonoBehaviour
                 pourLiquid.StartPouring();
             }
         }
+
+
+        
+            //transition.SetTrigger("Start");
+            //yield return new WaitForSeconds(transitionTime);
+         
+          
+        
 
     }
 }

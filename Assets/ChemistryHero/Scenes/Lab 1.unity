@@ -23472,7 +23472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1822811081740728, guid: 9d79a38f83fd64d7890b96cd421bf2a8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1822811081740728, guid: 9d79a38f83fd64d7890b96cd421bf2a8, type: 3}
       propertyPath: m_TagString
@@ -68684,7 +68684,7 @@ PrefabInstance:
     - target: {fileID: 2953106156805393883, guid: 9ddad2772b521134fa64c0913748e1af,
         type: 3}
       propertyPath: m_Name
-      value: Chlorine
+      value: Hydrochloric Acid
       objectReference: {fileID: 0}
     - target: {fileID: 3863296659014311968, guid: 9ddad2772b521134fa64c0913748e1af,
         type: 3}
