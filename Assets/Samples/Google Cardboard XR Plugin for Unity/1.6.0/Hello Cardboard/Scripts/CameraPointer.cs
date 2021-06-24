@@ -58,6 +58,8 @@ public class CameraPointer : MonoBehaviour
 
     private bool reBool = false;
     private bool quitBool = false;
+
+   
     /// <summary>
     /// Update is called once per frame.
     /// </summary>
@@ -177,10 +179,9 @@ public class CameraPointer : MonoBehaviour
                     startRadial = false;
                     print("not looking");
                 }
-
-
-
             }
+
+      
 
         }
         else
@@ -212,7 +213,6 @@ public class CameraPointer : MonoBehaviour
 
             if (hit.transform.gameObject.CompareTag("retry"))
             {
-
                 reBool = true;
                 quitBool = false;
             }
@@ -253,6 +253,9 @@ public class CameraPointer : MonoBehaviour
                     comfirmationUI.SetActive(false);
                     noBool = false;
                 }
+
+            
+
             if (reBool)
             {
                 SceneManager.LoadScene("Lab 1");

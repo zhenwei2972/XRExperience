@@ -26,6 +26,7 @@ TagManager:
   - PortalCombat
   - retry
   - quit
+  - monster
   layers:
   - Default
   - TransparentFX
