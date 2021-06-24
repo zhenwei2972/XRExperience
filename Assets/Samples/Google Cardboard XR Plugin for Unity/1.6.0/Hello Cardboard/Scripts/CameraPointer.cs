@@ -19,7 +19,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 /// <summary>
 /// Sends messages to gazed GameObject.
 /// </summary>
@@ -31,12 +31,21 @@ public class CameraPointer : MonoBehaviour
     public PourLiquid pourLiquid;
 
     //radial stuff
+    //public Transform loadingBarPos;
+    public GameObject LoadingBarObject;
     public Image LoadingBar;
     float currentValue=0;
     public float speed;
     public bool startRadial = false;
     bool isCounting = false;
     MovingScript lastTestTube = null;
+
+    //new ui stuff
+    private bool start = false;
+    private bool exit = false;
+    public Animator transition;
+    public float transitionTime = 1f;
+
     /// <summary>
     /// Update is called once per frame.
     /// </summary>
@@ -65,6 +74,20 @@ public class CameraPointer : MonoBehaviour
                 }
                 _gazedAtObject?.SendMessage("OnPointerEnter");
 
+                if (hit.transform.gameObject.CompareTag("StartGame"))
+                {
+                    Debug.Log("Start");
+                    start = true;
+                    exit = false;
+
+                }
+                else if (hit.transform.gameObject.CompareTag("Exit"))
+                {
+                    Debug.Log("Exit");
+                    start = false;
+                    exit = true;
+                }
+
             }
             if(_gazedAtObject.tag == "rubbish")
             {
@@ -74,15 +97,17 @@ public class CameraPointer : MonoBehaviour
 
             if (startRadial)
             {
+               
                 if (currentValue < 100)
                 {
+                   
                     currentValue += speed * Time.deltaTime;
 
                 }
                 if ( LoadingBar.fillAmount==1)
                 {
                     //  lastTestTube?.SendMessage("ResetLerp");
-                    print(lastTestTube);
+                   // print(lastTestTube);
                     lastTestTube.ResetLerp();
 
                     Debug.Log("successfully send Lerp");
@@ -95,6 +120,7 @@ public class CameraPointer : MonoBehaviour
               
                 if (!isCounting)
                 {
+                    LoadingBarObject.transform.position = _gazedAtObject.transform.position;
                     currentValue = 0;
                     isCounting = true;
                     startRadial = true;
@@ -120,7 +146,16 @@ public class CameraPointer : MonoBehaviour
         // Checks for screen touches.
         if (Google.XR.Cardboard.Api.IsTriggerPressed)
         {
-            
+            if (start)
+            {
+                //transition.SetTrigger("Start");
+                //yield return new WaitForSeconds(transitionTime);
+                SceneManager.LoadScene("Lab 1");
+            }
+            else if (exit)
+            {
+                Application.Quit();
+            }
             _gazedAtObject?.SendMessage("OnPointerClick");
         }
 

@@ -14,14 +14,12 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/ChemistryHero/Scenes/Start.unity
+    guid: 09e4667de67ef6946bd8fb2fd340710f
   - enabled: 1
-<<<<<<< HEAD
-    path: Assets/ChemistryHero/Scenes/Combat.unity
-    guid: c1aba35da24cf5643a7f91e214c522ba
-=======
     path: Assets/ChemistryHero/Scenes/Lab 1.unity
     guid: 172aee20a6540b5468b88f391e05a773
->>>>>>> a15ee999b9f2fe6e542dbc9c63a9f654c936a4ad
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 7844c434b2641ad4d96ccc954b428d6a,
       type: 2}

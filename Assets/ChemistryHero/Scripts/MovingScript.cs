@@ -42,7 +42,7 @@ public class MovingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(selected==true)
+        if (selected == true)
         {
             transform.position = Vector3.Lerp(transform.position, cameraPosition.transform.position, 2 * Time.deltaTime);
             // LerpMovement(pointA, pointB);
@@ -51,7 +51,7 @@ public class MovingScript : MonoBehaviour
 
         }
         if (exit && clicked)
-        { 
+        {
             Vector3 finalRotation = new Vector3(transform.position.x, transform.position.y, transform.position.z - rotateAmount);
             SetBlendedEulerAngles(finalRotation);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, _targetRotation, turningRate * Time.deltaTime);
@@ -69,18 +69,18 @@ public class MovingScript : MonoBehaviour
             }
 
         }
-        if(resetLerp)
+        if (resetLerp)
         {
             Debug.Log("Reset the lerp");
-            transform.position = Vector3.Lerp(transform.position, startPos.transform.position, 2 * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, startPos.transform.position, 6 * Time.deltaTime);
             transform.rotation = Quaternion.Lerp(transform.rotation, startPos.transform.rotation, 5 * Time.deltaTime);
-           // SetBlendedEulerAngles(finalRotation);
+            // SetBlendedEulerAngles(finalRotation);
         }
- 
+
         // if want to dispose, look at rubbish bin. 
-       
+
     }
-   
+
     IEnumerator DestroyTube()
     {
         // call zul's code to give the name..
@@ -89,7 +89,7 @@ public class MovingScript : MonoBehaviour
         yield return new WaitForSeconds(9);
         // destroy gameobject.
         Destroy(gameObject);
-        
+
 
     }
     string GetTag()
@@ -101,7 +101,7 @@ public class MovingScript : MonoBehaviour
         Debug.Log("selected");
         pointB = cameraPosition.transform.position;
         selected = true;
-        
+
     }
     public void ResetLerp()
     {
@@ -110,21 +110,21 @@ public class MovingScript : MonoBehaviour
         selected = false;
         exit = false;
         clicked = false;
-    }    
+    }
     void LerpMovement(Vector3 start, Vector3 end)
     {
         // move to camera
         t += Time.deltaTime * speed;
         // Moves the object up abit to indicate that it is selected.
-        
-          transform.position = Vector3.Lerp(start, end, Easing.Quadratic.In(t));
-        
+
+        transform.position = Vector3.Lerp(start, end, Easing.Quadratic.In(t));
+
     }
 
-    
+
     void OnPointerClick()
     {
         clicked = true;
-        
+
     }
 }
