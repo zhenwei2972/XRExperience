@@ -46,9 +46,11 @@ public class CameraPointer : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
     public bool mainMenu = false;
+    public bool tutorialLab1Page = false;
     bool activateTut1 = false;
     public LabTutorial labTut;
     bool activateTut3 = false;
+    
     /// <summary>
     /// Update is called once per frame.
     /// </summary>
@@ -98,22 +100,27 @@ public class CameraPointer : MonoBehaviour
             {
                 if (_gazedAtObject.CompareTag("testtube"))
                 {
-                    if (!activateTut1)
+                    if (tutorialLab1Page)
                     {
-                        activateTut1 = true;
-                        labTut.IncrementNext();
-                    }
-                    else if(_gazedAtObject.name=="Sodium")
-                    {
-                        if (!activateTut3)
                         {
-                            activateTut3= true;
-                            labTut.IncrementNext();
+                            if (!activateTut1)
+                            {
+                                activateTut1 = true;
+                                labTut.IncrementNext();
+                            }
+                            else if (_gazedAtObject.name == "Sodium")
+                            {
+                                if (!activateTut3)
+                                {
+                                    activateTut3 = true;
+                                    labTut.IncrementNext();
+                                }
+                            }
                         }
                     }
+                   
 
                     lastTestTube = _gazedAtObject.GetComponent<MovingScript>();
-                    print("zul is:" + lastTestTube);
                 }
 
 

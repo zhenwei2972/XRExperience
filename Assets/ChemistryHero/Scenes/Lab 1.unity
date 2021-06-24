@@ -31888,6 +31888,7 @@ MonoBehaviour:
   transition: {fileID: 0}
   transitionTime: 1
   mainMenu: 0
+  tutorialLab1Page: 1
   labTut: {fileID: 2047621866}
 --- !u!81 &959308589
 AudioListener:
