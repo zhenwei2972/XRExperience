@@ -55,6 +55,9 @@ public class CameraPointer : MonoBehaviour
     private bool yesBool = false;
     private bool noBool = false;
     public GameObject comfirmationUI;
+
+    private bool reBool = false;
+    private bool quitBool = false;
     /// <summary>
     /// Update is called once per frame.
     /// </summary>
@@ -206,6 +209,20 @@ public class CameraPointer : MonoBehaviour
                 yesBool = false;
 
             }
+
+            if (hit.transform.gameObject.CompareTag("retry"))
+            {
+
+                reBool = true;
+                quitBool = false;
+            }
+            if (hit.transform.gameObject.CompareTag("quit"))
+            {
+
+                quitBool = true;
+                reBool = false;
+
+            }
         }
 
         // Checks for screen touches.
@@ -236,8 +253,16 @@ public class CameraPointer : MonoBehaviour
                     comfirmationUI.SetActive(false);
                     noBool = false;
                 }
-
+            if (reBool)
+            {
+                SceneManager.LoadScene("Lab 1");
             }
+            if (quitBool)
+            {
+                Application.Quit();
+            }
+
+        }
 
             /*  if (Input.GetMouseButton(0))
               {
